@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             name = binding.edtName.text.toString(),
             description = binding.edtDescription.text.toString(),
             code = binding.edtCode.text.toString(),
-            price = binding.edtPrice.text.toString().toDouble()
+            price = if (binding.edtPrice.text.isNotEmpty()) binding.edtPrice.text.toString().toDouble() else 0.0
         )
 
         outState.putSerializable("product", product)
